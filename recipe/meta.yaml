@@ -1,18 +1,18 @@
 {% set name = "colcon-core" %}
-{% set version = "0.5.3" %}
+{% set version = "0.5.4" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://github.com/colcon/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 77acb7adad8ff14485d0602056053ce4f81757afa9dda7159100715c8dc282b4
+  sha256: ad45eed0d8307c9906928f27c72fcaa5893bb16c709c31504bd3607911d78935
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
-  skip: True  # [py<35]
+  script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [py<35]
   entry_points:
     - colcon = colcon_core.command:main
 
