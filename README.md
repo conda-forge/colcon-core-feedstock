@@ -5,7 +5,7 @@ Home: https://github.com/colcon/colcon-core
 
 Package license: Apache-2.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: colcon is a command line tool to improve the workflow of building,
 testing and using multiple software packages.
