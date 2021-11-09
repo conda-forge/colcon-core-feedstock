@@ -12,29 +12,34 @@ source:
 build:
   number: 2
   script: {{ PYTHON }} -m pip install . -vv
-  skip: true  # [py<35]
+  noarch: python
   entry_points:
     - colcon = colcon_core.command:main
 
 requirements:
   host:
+    - python >=3.6
     - pip
-    - python
   run:
-    - python
-    - coloredlogs  # [win]
+    - python >=3.6
+    - coloredlogs
     - distlib
-    - EmPy
+    - empy
     - pytest
     - pytest-cov
     - pytest-repeat
     - pytest-rerunfailures
-    - pytest-runner
     - setuptools >=30.3.0
 
 test:
   imports:
-    - {{ name.replace("-", "_") }}
+    - colcon
+    - colcon_core
+  commands:
+    - pip check
+    - colcon --help
+  requires:
+    - pip
 
 about:
   home: https://github.com/colcon/{{ name }}
