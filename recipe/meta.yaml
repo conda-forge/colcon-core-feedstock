@@ -1,5 +1,5 @@
 {% set name = "colcon-core" %}
-{% set version = "0.17.1" %}
+{% set version = "0.18.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/colcon/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 646258601d34fcfa8fd8ca117397ee68bd81ddb62bfa37221678abfdbd1a7080
+  sha256: 2efd50df5867034590b4a577ee280fc63267e3c7852e45cbf6709e0824c4b9aa
 
 build:
   number: 0
@@ -20,6 +20,7 @@ requirements:
   host:
     - python >=3.6
     - pip
+    - setuptools
   run:
     - python >=3.6
     - coloredlogs
