@@ -146,5 +146,6 @@ Feedstock Maintainers
 =====================
 
 * [@seanyen](https://github.com/seanyen/)
+* [@traversaro](https://github.com/traversaro/)
 * [@wolfv](https://github.com/wolfv/)
 
