@@ -10,7 +10,7 @@ source:
   sha256: 005e5c3260e03c3118fe96a12b08e443947382fd376a97389c630064c1a6b5fc
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
   entry_points:
@@ -18,11 +18,11 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - coloredlogs
     - distlib
     - empy
@@ -41,6 +41,7 @@ test:
     - colcon --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/colcon/{{ name }}
