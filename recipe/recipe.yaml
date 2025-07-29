@@ -32,7 +32,8 @@ requirements:
     - pytest-cov
     - pytest-repeat
     - pytest-rerunfailures
-    - setuptools >=30.3.0
+    - setuptools >=30.3.0,<80
+    - tomli >=1.0.0
 
 tests:
   - python:
