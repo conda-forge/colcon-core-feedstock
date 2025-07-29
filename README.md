@@ -10,6 +10,9 @@ Package license: Apache-2.0
 Summary: colcon is a command line tool to improve the workflow of building,
 testing and using multiple software packages.
 
+Development: https://github.com/colcon/colcon-core
+
+Documentation: https://colcon.readthedocs.io/en/released/
 
 Current build status
 ====================
