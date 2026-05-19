@@ -1,0 +1,22 @@
+--- a/colcon_core/shell/template/prefix.sh.em
++++ b/colcon_core/shell/template/prefix.sh.em
+@@ -109,10 +109,15 @@ _colcon_prefix_sh_source_script() {
+ }
+
+ # get all commands in topological order
+-_colcon_ordered_commands="$(@
+-$_colcon_python_executable "$_colcon_prefix_sh_COLCON_CURRENT_PREFIX/_local_setup_util_sh.py" sh@
++# guard: conda/pixi prefixes are chained as underlays but do not have
++# _local_setup_util_sh.py (it is only generated in colcon workspace installs)
++if [ -f "$_colcon_prefix_sh_COLCON_CURRENT_PREFIX/_local_setup_util_sh.py" ]; then
++_colcon_ordered_commands="$(@
++$_colcon_python_executable "$_colcon_prefix_sh_COLCON_CURRENT_PREFIX/_local_setup_util_sh.py" sh@
+ @[if merge_install]@
+  --merged-install@
+ @[end if]@
+-)"
++)"
++else
++  _colcon_ordered_commands=""
++fi
+ unset _colcon_python_executable

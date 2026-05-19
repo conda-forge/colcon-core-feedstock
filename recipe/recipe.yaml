@@ -9,9 +9,11 @@ package:
 source:
   url: https://github.com/colcon/${{ name }}/archive/${{ version }}.tar.gz
   sha256: a8f1dd2902d01ba5d9de15f698cb3944c54e1029c0e3c881f85ed3a38afd3602
+  patches:
+    - patches/fix_conda_prefix_util_guard.patch
 
 build:
-  number: 0
+  number: 1
   script: ${{ PYTHON }} -m pip install . -vv
   noarch: python
   python:
