@@ -13,7 +13,7 @@ source:
     - patches/fix_conda_prefix_util_guard.patch
 
 build:
-  number: 0
+  number: 1
   script: ${{ PYTHON }} -m pip install . -vv
   noarch: python
   python:
