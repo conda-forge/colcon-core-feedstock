@@ -1,6 +1,6 @@
 context:
   name: colcon-core
-  version: "0.20.1"
+  version: "0.21.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://github.com/colcon/${{ name }}/archive/${{ version }}.tar.gz
-  sha256: a8f1dd2902d01ba5d9de15f698cb3944c54e1029c0e3c881f85ed3a38afd3602
+  sha256: d64b2d8cd84dfab342c3dda7f89e3bafc275242f7107472af8e67ed1287f15f6
   patches:
     - patches/fix_conda_prefix_util_guard.patch
 
 build:
-  number: 1
+  number: 0
   script: ${{ PYTHON }} -m pip install . -vv
   noarch: python
   python:
